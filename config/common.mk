@@ -1,8 +1,3 @@
-ifneq ($(TARGET_BOOTANIMATION_NAME),)
-    PRODUCT_COPY_FILES += \
-        vendor/jbmp/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
-endif
-
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -18,14 +13,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
     vendor/jbmp/CHANGELOG.mkdn:system/etc/ChangeLog-JBMP.txt
-
-# JBMini Theme
-PRODUCT_COPY_FILES += \
-    vendor/jbmp/prebuilt/common/app/JBMiniTheme.apk:system/app/JBMiniTheme.apk
-
-# Bootaudio
-PRODUCT_COPY_FILES += \
-    vendor/jbmp/prebuilt/common/media/boot_audio.mp3:system/media/boot_audio.mp3
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -53,7 +40,6 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/modelid_cfg.sh:system/bin/modelid_cfg.sh
 
 PRODUCT_COPY_FILES +=  \
-    vendor/jbmp/prebuilt/common/app/Xperia_Launcher.apk:system/app/Xperia_Launcher.apk \
     vendor/jbmp/proprietary/Term.apk:system/app/Term.apk \
     vendor/jbmp/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
 
@@ -118,5 +104,5 @@ JBMP_VERSION := $(PRODUCT_BUILDTYPE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
 JBMP_NAMEVER := JBMP-$(PRODUCT_BUILDTYPE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.modversion=$(JBMP_VERSION) \
-  ro.modnamever=$(JBMP_NAMEVER)
+  ro.modversion=CrystalCM10 5.0.0 \
+  ro.modnamever=CrystalCM10 5.0.0

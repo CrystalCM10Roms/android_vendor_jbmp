@@ -1,6 +1,5 @@
 # Inherit common CM stuff
 $(call inherit-product, vendor/jbmp/config/common.mk)
-$(call inherit-product, vendor/jbmp/config/common_gapps.mk)
 
 # Bring in all audio files
 include frameworks/base/data/sounds/NewAudio.mk
@@ -19,8 +18,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
   Mms
-
-ifeq ($(TARGET_BOOTANIMATION_NAME),)
-    PRODUCT_COPY_FILES += \
-        vendor/jbmp/prebuilt/common/bootanimation/vertical-320x480.zip:system/media/bootanimation.zip
-endif
